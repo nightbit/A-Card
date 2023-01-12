@@ -7,33 +7,45 @@
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
-            VerticalOptions="Center">
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand"
+            BackgroundColor="White"
+            >
+
 
             <Image
                 Source="acardv2_cropped.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                SemanticProperties.Description="acard logo"
                 HeightRequest="200"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                />
 
             <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
+                Text="Welcome! Register or Login."
                 SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                SemanticProperties.Description="Welcome! Register or Login."
                 FontSize="18"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center"
+                TextColor="Black"
+                />
 
             <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+                x:Name="RegisterBtn"
+                Text="Register"
+                SemanticProperties.Hint="Leads to the registration page"
+                Clicked="OnRegisterClicked"
+                HorizontalOptions="Center"
+                TextColor="Black"
+                />
+            <Button
+                x:Name="LoginBtn"
+                Text="Login"
+                SemanticProperties.Hint="Leads to the login page"
+                Clicked="OnLoginClicked"
+                HorizontalOptions="Center"
+                TextColor="Black"
+                />
 
         </VerticalStackLayout>
     </ScrollView>
