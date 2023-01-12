@@ -6,8 +6,9 @@ public partial class MainPage : ContentPage
 
 	public MainPage()
 	{
-		InitializeComponent();
-	}
+        Application.Current.UserAppTheme = AppTheme.Light;
+        InitializeComponent();
+    }
 
 	private void OnLoginClicked(object sender, EventArgs e)
 	{
