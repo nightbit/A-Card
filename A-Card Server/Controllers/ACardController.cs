@@ -21,12 +21,12 @@ namespace A_Card_Server.Controllers
             WriteIndented = true
         };
 
-        #region animal
-
         public ACardController(ACardContext dbContext)
         {
             _dbContext = dbContext;
         }
+
+        #region animal
 
         [HttpGet("animals")]
         public async Task<ActionResult<IEnumerable<Animal>>> GetAnimals()
@@ -112,6 +112,76 @@ namespace A_Card_Server.Controllers
 
         #region owner
 
+        [HttpGet("owner/{ssn}")]
+        public async Task<ActionResult<Owner>> GetOwner(string ssn)
+        {
+            if (_dbContext.Owners == null)
+                return NotFound();
+
+            var owner = await _dbContext.Owners.FindAsync(ssn);
+
+            if (owner == null)
+                return NotFound();
+
+            return owner;
+        }
+
+        [HttpPost("owner")]
+        public async Task<ActionResult<Owner>> PostOwner(Owner owner)
+        {
+            _dbContext.Owners.Add(owner);
+            await _dbContext.SaveChangesAsync();
+            return CreatedAtAction(nameof(GetOwner), new { ssn = owner.ssn }, owner);
+        }
+
+        [HttpPut("owner/{ssn}")]
+        public async Task<IActionResult> PutOwner(string ssn, Owner owner)
+        {
+            if (ssn != owner.ssn)
+                return BadRequest();
+
+            _dbContext.Entry(owner).State = EntityState.Modified;
+
+            try
+            {
+                await _dbContext.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!OwnerExists(ssn))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        private bool OwnerExists(string ssn)
+        {
+            return (_dbContext.Owners?.Any(e => e.ssn == ssn)).GetValueOrDefault();
+        }
+
+        [HttpDelete("owner/{ssn}")]
+        public async Task<IActionResult> DeleteOwner(string ssn)
+        {
+            if (_dbContext.Owners == null)
+                return NotFound();
+
+            var owner = await _dbContext.Animals.FindAsync(ssn);
+
+            if (owner == null)
+                return NotFound();
+
+            _dbContext.Animals.Remove(owner);
+            await _dbContext.SaveChangesAsync();
+
+            return NoContent();
+        }
 
 
         #endregion

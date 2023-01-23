@@ -16,6 +16,7 @@ namespace A_Card_Server.Models
     }
     public class Owner
     {
+
         public string ssn { get; set; } //KEY
 
         public string firstname { get; set; }

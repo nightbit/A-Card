@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="A_Card.Pages.Register"
+             Title="Login">
+   <ScrollView Margin="20">
+    <StackLayout Padding="30" Spacing="20" VerticalOptions="CenterAndExpand">
+        <StackLayout>
+            <StackLayout Spacing="10">
+                <Label Text="Register new acard account" FontSize="20" TextColor="Black" HorizontalTextAlignment="Center"/>
+            </StackLayout>
+            <StackLayout Spacing="10">
+                <Label Text="SSN" TextColor="Gray"/>
+                <Entry x:Name="ssnEntry" Placeholder="Enter your SSN" TextColor="Black"/>
+            </StackLayout>
+            <StackLayout Spacing="10">
+                <Label Text="Password" TextColor="Gray"/>
+                <Entry x:Name="passwordEntry" Placeholder="Enter your password" IsPassword="True" TextColor="Black"/>
+            </StackLayout>
+            <StackLayout Spacing="10">
+                <Label Text="First Name" TextColor="Gray"/>
+                <Entry x:Name="firstNameEntry" Placeholder="Enter your first name" IsPassword="False" TextColor="Black"/>
+            </StackLayout>
+            <StackLayout Spacing="10">
+                <Label Text="Last Name" TextColor="Gray"/>
+                <Entry x:Name="lastNameEntry" Placeholder="Enter your last name" IsPassword="False" TextColor="Black"/>
+            </StackLayout>
+            <StackLayout Spacing="10">
+                <Label Text="Email" TextColor="Gray"/>
+                <Entry x:Name="emailEntry" Placeholder="Enter your email" IsPassword="False" TextColor="Black"/>
+            </StackLayout>
+            <StackLayout Spacing="10">
+                <Label Text="Phone" TextColor="Gray"/>
+                <Entry x:Name="phoneEntry" Placeholder="Enter your phone number" IsPassword="False" TextColor="Black"/>
+            </StackLayout>
+            <StackLayout Spacing="10">
+                <Label Text="Birthday" TextColor="Gray"/>
+                <Entry x:Name="birthdayEntry" Placeholder="YYYY-MM-DD" IsPassword="False" TextColor="Black"/>
+            </StackLayout>
+            <StackLayout Spacing="10">
+                <Label Text="Street and number" TextColor="Gray"/>
+                <Entry x:Name="streetEntry" Placeholder="Enter your street + #" IsPassword="False" TextColor="Black"/>
+            </StackLayout>
+            <StackLayout Spacing="10">
+                <Label Text="ZIP (Postal Code)" TextColor="Gray"/>
+                <Entry x:Name="ZIP" Placeholder="Enter your ZIP" IsPassword="False" TextColor="Black"/>
+            </StackLayout>
+            <StackLayout Spacing="10">
+                <Label Text="City" TextColor="Gray"/>
+                <Entry x:Name="cityEntry" Placeholder="Enter your city" IsPassword="False" TextColor="Black"/>
+            </StackLayout>
+            <StackLayout Spacing="10">
+                <Label Text="Country" TextColor="Gray"/>
+                <Entry x:Name="countryEntry" Placeholder="Enter your country" IsPassword="False" TextColor="Black"/>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout>
+            <Button Text="REGISTER" BackgroundColor="DarkBlue" TextColor="White" Clicked="OnRegisterButtonClicked" />
+        </StackLayout>
+    </StackLayout>
+    </ScrollView>
+</ContentPage>

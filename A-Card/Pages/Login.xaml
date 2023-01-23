@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="A_Card.Pages.Login"
+             Title="Login">
+<StackLayout Padding="30" Spacing="20" VerticalOptions="CenterAndExpand">
+    <StackLayout>
+        <StackLayout Spacing="10">
+            <Label Text="Log in to your existing acard account" FontSize="20" TextColor="Black" HorizontalTextAlignment="Center"/>
+        </StackLayout>
+        <StackLayout Spacing="10">
+            <Label Text="SSN" TextColor="Gray"/>
+            <Entry x:Name="ssnEntry" Placeholder="Enter your SSN" TextColor="Black"/>
+        </StackLayout>
+        <StackLayout Spacing="10">
+            <Label Text="Password" TextColor="Gray"/>
+            <Entry x:Name="passwordEntry" Placeholder="Enter your password" IsPassword="True" TextColor="Black"/>
+        </StackLayout>
+    </StackLayout>
+    <StackLayout>
+        <Button Text="LOGIN" BackgroundColor="DarkBlue" TextColor="White" Clicked="OnLoginButtonClicked" />
+    </StackLayout>
+</StackLayout>
+</ContentPage>

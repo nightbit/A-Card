@@ -1,24 +1,24 @@
-﻿namespace A_Card;
+﻿using A_Card.Classes;
+
+namespace A_Card;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
-
 	public MainPage()
 	{
         Application.Current.UserAppTheme = AppTheme.Light;
         InitializeComponent();
     }
 
-	private void OnLoginClicked(object sender, EventArgs e)
+	private async void OnLoginClicked(object sender, EventArgs e)
 	{
-
+        await Navigation.PushAsync(new Pages.Login());
 	}
 
-	private void OnRegisterClicked(object sender, EventArgs e)
+    private async void OnRegisterClicked(object sender, EventArgs e)
 	{
-
-	}
+        await Navigation.PushAsync(new Pages.Register());
+    }
 }
 
 
