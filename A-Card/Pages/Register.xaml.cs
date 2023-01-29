@@ -15,9 +15,10 @@ public partial class Register : ContentPage
 
     private async void OnRegisterButtonClicked(object sender, EventArgs e)
     {
-        Owner owner = new Owner(ssnEntry.Text, firstNameEntry.Text, lastNameEntry.Text, emailEntry.Text, phoneEntry.Text, passwordEntry.Text, birthdayEntry.Text, streetEntry.Text, ZIP.Text, cityEntry.Text, countryEntry.Text);
+        Owner owner = new Owner(ssnEntry.Text, firstNameEntry.Text, lastNameEntry.Text, emailEntry.Text,
+            phoneEntry.Text, passwordEntry.Text, birthdayEntry.Text, streetEntry.Text, ZIP.Text, cityEntry.Text, countryEntry.Text);
 
-        var client = new RestClient("https://192.168.1.3:7192");
+        var client = new RestClient("http://localhost:5219");
 
         var request = new RestRequest("/api/acard/owner", Method.Post);
 
@@ -36,7 +37,7 @@ public partial class Register : ContentPage
         RestResponse response = client.Execute(request);
         var content = response.Content;
 
-        if(response.IsSuccessful)
+        if (response.IsSuccessful)
         {
             await Navigation.PushAsync(new Home(owner));
         }

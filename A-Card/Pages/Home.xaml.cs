@@ -7,13 +7,16 @@ using ZXing.QrCode;
 
 public partial class Home : ContentPage
 {
-    public string QRText { get; set; } = "QR Code";
+    public string QRText { get; set; } = "";
     public string QRCode { get; set; } = "";
     public Home(Owner owner)
     {
         InitializeComponent();
         BindingContext = this;
-        QRCode = owner.ssn;
-        QRText = "Welcome back, " + owner.firstname;
+    }
+
+    async void OnRegisterAnimalClicked(System.Object sender, System.EventArgs e)
+    {
+        await Navigation.PushAsync(new RegisterAnimal());
     }
 }

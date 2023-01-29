@@ -15,8 +15,9 @@ public partial class Login : ContentPage
     private async void OnLoginButtonClicked(object sender, EventArgs e)
     {
         //https://192.168.1.3:7192/api/acard/animals 5219
+        //10.205.207.147
 
-        var options = new RestClientOptions("https://192.168.1.3:7192")
+        var options = new RestClientOptions("http://localhost:5219")
         {
             RemoteCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true
         };

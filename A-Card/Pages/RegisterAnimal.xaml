@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="A_Card.Pages.RegisterAnimal"
+             Title="Register">
+   <ScrollView Margin="20">
+    <StackLayout Padding="30" Spacing="20" VerticalOptions="CenterAndExpand">
+        <StackLayout>
+            <StackLayout Spacing="10">
+                <Label Text="Register a new pet" FontSize="20" TextColor="Black" HorizontalTextAlignment="Center"/>
+            </StackLayout>
+            <StackLayout Spacing="10">
+                <Label Text="Name" TextColor="Gray"/>
+                <Entry x:Name="nameEntry" Placeholder="" TextColor="Black"/>
+            </StackLayout>
+            <StackLayout Spacing="10">
+                <Label Text="Species" TextColor="Gray"/>
+                <Entry x:Name="speciesEntry" Placeholder="" IsPassword="False" TextColor="Black"/>
+            </StackLayout>
+            <StackLayout Spacing="10">
+                <Label Text="Birthday" TextColor="Gray"/>
+                <Entry x:Name="animalBirthdayEntry" Placeholder="" IsPassword="False" TextColor="Black"/>
+            </StackLayout>
+            <StackLayout Spacing="10">
+                <Label Text="ChipID" TextColor="Gray"/>
+                <Entry x:Name="chipEntry" Placeholder="Optional" IsPassword="False" TextColor="Black"/>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout Spacing="10" >
+            <Button Text="REGISTER ANIMAL" BackgroundColor="DarkBlue" TextColor="White" Clicked="OnRestAnimalClicked" />
+        </StackLayout>
+    </StackLayout>
+    </ScrollView>
+</ContentPage>

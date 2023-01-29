@@ -5,8 +5,6 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "A-Card", "A-Card\A-Card.csproj", "{A5665A4F-D90B-4557-9932-339C7179C5C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A-Card Business", "A-Card Business\A-Card Business.csproj", "{A539E41E-A960-4513-A8F7-1882A8B99EFE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A-Card Server", "A-Card Server\A-Card Server.csproj", "{7B551B8B-E7DB-470B-BC08-54C7061D796A}"
 EndProject
 Global
