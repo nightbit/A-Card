@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
+             x:Class="A_Card.Pages.Home"
+             Title="Your Pet Overview">
+    <StackLayout Padding="30" Spacing="20" VerticalOptions="CenterAndExpand">
+        <StackLayout Spacing="10">
+            <Label Text="Bobbys QR Code:" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+        <StackLayout Spacing="10">
+            <zxing:BarcodeGeneratorView Format="QrCode" Value="BobbyTheCat2324508204385039459JHlkjshkljfglksdfjhg" WidthRequest="200" HeightRequest="200"/>
+        </StackLayout>
+        <StackLayout Spacing="10" >
+            <Button Text="LOG SYMPTOMS" BackgroundColor="DarkBlue" TextColor="White" Clicked="OnRegisterAnimalClicked" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
